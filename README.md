@@ -1,21 +1,24 @@
-# Aplicación Todo Angular v1.0
+# Aplicación Todo Angular v2.0
 
-Esta es la versión inicial de la aplicación Todo construida con Angular 17 y TailwindCSS. Configura la estructura básica del proyecto e integra TailwindCSS mediante una configuración manual de PostCSS.
+Esta versión introduce una lista de tareas obtenida desde una API remota. El proyecto utiliza Angular 17 con TailwindCSS.
 
 ## Características
-- Configuración de Angular 17
-- TailwindCSS configurado mediante `tailwind.config.js`
+- Obtiene tareas desde `https://todoapitest.juansegaliz.com/todos` usando `TodoService`.
+- Muestra las tareas en una tabla responsive con TailwindCSS con las columnas: **ID**, **Título** y **Completado**.
+- Configura el enrutamiento para mostrar la lista en `/todos`.
 
 ## Para comenzar
 1. Instalar dependencias:
    ```bash
    npm install
    ```
-2. Iniciar el servidor de desarrollo:
+2. Ejecutar la aplicación:
    ```bash
    npm start
    ```
+3. Navegar a `http://localhost:4200/todos` para ver la lista de tareas.
 
-## Configuración de TailwindCSS
-Tailwind se configura mediante `tailwind.config.js` con las rutas de contenido establecidas en todos los archivos HTML y TypeScript de la carpeta `src`.  
-Los estilos se inyectan en `src/styles.css` usando las directivas `base`, `components` y `utilities` de Tailwind.
+## Estructura del proyecto
+- `src/app/services/todo.service.ts` — Proporciona el método `getTodos()` para llamar a la API y mapear los resultados.
+- `src/app/components/todo-list` — Contiene el componente que renderiza la tabla de tareas.
+- `src/app/app.routes.ts` — Define las rutas de la aplicación.
